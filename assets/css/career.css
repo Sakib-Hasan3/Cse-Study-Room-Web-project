@@ -1,0 +1,134 @@
+/* Reset & Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Hind Siliguri', sans-serif;
+  background: #f2f7fb;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Navigation */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 32px;
+  background: #003049;
+}
+.nav__brand {
+  color: #fff;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+.nav__links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+.nav__links a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: opacity .2s;
+}
+.nav__links a:hover {
+  opacity: .8;
+}
+.nav__logout {
+  background: #e74c3c;
+  padding: 6px 12px;
+  border-radius: 4px;
+}
+
+/* Hero */
+.hero {
+  text-align: center;
+  padding: 60px 20px 40px;
+  background: #00b894;
+  color: #fff;
+}
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 12px;
+}
+.hero p {
+  font-size: 1.1rem;
+  opacity: .9;
+}
+
+/* Grid of Cards */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+  gap: 24px;
+  padding: 20px 32px 40px;
+}
+.card {
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  transition: transform .2s, box-shadow .2s;
+}
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+}
+.card__title {
+  background: #003049;
+  color: #fff;
+  padding: 12px 16px;
+  font-size: 1.2rem;
+}
+.card__desc {
+  padding: 16px;
+  font-size: .95rem;
+  color: #555;
+}
+
+/* Sections inside card */
+.card__section {
+  padding: 0 16px 16px;
+}
+.card__section h3 {
+  font-size: 1rem;
+  color: #00b894;
+  margin-bottom: 8px;
+}
+.card__section ul {
+  list-style: none;
+  padding-left: 16px;
+}
+.card__section li {
+  margin-bottom: 6px;
+  position: relative;
+  padding-left: 12px;
+}
+.card__section li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: #00b894;
+}
+.card__section a {
+  color: #003049;
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .nav {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .hero h1 {
+    font-size: 2rem;
+  }
+  .card__title {
+    font-size: 1.1rem;
+  }
+}
