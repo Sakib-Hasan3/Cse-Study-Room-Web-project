@@ -26,152 +26,245 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Register - CSE Study Room</title>
-    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri&family=Share+Tech+Mono&display=swap" rel="stylesheet">
-    <style>
-        * {
-            box-sizing: border-box;
-            font-family: 'Hind Siliguri', sans-serif;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Register - CSE Study Room</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
 
-        body {
-            margin: 0;
-            background: linear-gradient(135deg, #0f0f0f, #1b1b1b);
-            background-image: radial-gradient(rgba(0, 255, 255, 0.1) 1px, transparent 1px),
-                              radial-gradient(rgba(0, 255, 255, 0.1) 1px, transparent 1px);
-            background-size: 40px 40px;
-            background-position: 0 0, 20px 20px;
-            color: #ffffff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-        }
+    body {
+      margin: 0;
+      background-color: #f9f9ff;
+    }
 
-        .register-box {
-            background: rgba(20, 20, 20, 0.9);
-            padding: 40px 30px;
-            border-radius: 14px;
-            box-shadow: 0 0 20px rgba(0, 255, 255, 0.4);
-            width: 100%;
-            max-width: 420px;
-            border: 1px solid #00ffff33;
-        }
+    .container {
+      display: flex;
+      flex: 1;
+      margin-top: 100px;
+      min-height: calc(100vh - 100px);
+    }
 
-        h2 {
-            font-family: 'Share Tech Mono', monospace;
-            text-align: center;
-            color: #00ffff;
-            margin-bottom: 24px;
-            font-size: 28px;
-        }
+    .illustration {
+      flex: 1;
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px;
+    }
 
-        input, select {
-            width: 100%;
-            padding: 12px 14px;
-            margin-bottom: 20px;
-            border: 1px solid #00ffff55;
-            border-radius: 8px;
-            background-color: #1a1a1a;
-            color: #fff;
-            font-size: 16px;
-            transition: all 0.2s ease;
-        }
+    .illustration img {
+      max-width: 100%;
+      height: auto;
+    }
 
-        input:focus, select:focus {
-            outline: none;
-            border-color: #00ffff;
-            box-shadow: 0 0 8px #00ffff88;
-        }
+    .form-section {
+      flex: 1;
+      background: #ffffff;
+      padding: 80px 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
 
-        label {
-            font-size: 14px;
-            margin-bottom: 8px;
-            display: inline-block;
-            color: #cccccc;
-        }
+    .form-section h2 {
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 30px;
+      color: #1c1d1f;
+    }
 
-        button {
-            width: 100%;
-            padding: 12px;
-            background: linear-gradient(to right, #00ffff, #008080);
-            border: none;
-            border-radius: 8px;
-            font-size: 16px;
-            font-weight: bold;
-            color: #121212;
-            cursor: pointer;
-            transition: background 0.3s ease;
-        }
+    form {
+      width: 100%;
+      max-width: 420px;
+    }
 
-        button:hover {
-            background: linear-gradient(to right, #00cccc, #005f5f);
-        }
+    input, select {
+      width: 100%;
+      padding: 12px 16px;
+      margin-bottom: 18px;
+      font-size: 15px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
 
-        .error {
-            color: #ff4d4d;
-            text-align: center;
-            margin-top: 10px;
-            font-size: 15px;
-        }
+    input:focus, select:focus {
+      border-color: #805ad5;
+      outline: none;
+    }
 
-        .tech-tag {
-            font-size: 12px;
-            color: #999;
-            text-align: center;
-            margin-top: 14px;
-            font-family: 'Share Tech Mono', monospace;
-        }
+    label {
+      display: block;
+      font-size: 14px;
+      margin-bottom: 6px;
+      color: #333;
+    }
 
-        .login-link {
-            margin-top: 18px;
-            text-align: center;
-            font-size: 14px;
-            color: #aaa;
-        }
+    .checkbox {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 20px;
+      font-size: 14px;
+      color: #444;
+    }
 
-        .login-link a {
-            color: #00ffff;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
+    .checkbox input {
+      margin-right: 8px;
+      margin-top: 2px;
+    }
 
-        .login-link a:hover {
-            color: #00cccc;
-        }
-    </style>
+    button {
+      width: 100%;
+      background-color: #805ad5;
+      color: #fff;
+      padding: 14px;
+      border: none;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #6b46c1;
+    }
+
+    .divider {
+      text-align: center;
+      margin: 30px 0;
+      color: #999;
+      font-size: 14px;
+      position: relative;
+    }
+
+    .divider::before, .divider::after {
+      content: "";
+      height: 1px;
+      background: #ddd;
+      flex: 1;
+      margin: 0 12px;
+    }
+
+    .divider {
+      display: flex;
+      align-items: center;
+    }
+
+    .social-buttons {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+    }
+
+    .social-buttons a {
+      border: 1px solid #ccc;
+      padding: 10px 16px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      background: #fff;
+    }
+
+    .social-buttons a img {
+      width: 24px;
+      height: 24px;
+    }
+
+    .error {
+      color: red;
+      font-size: 14px;
+      margin-bottom: 15px;
+    }
+
+    .terms {
+      font-size: 12px;
+      color: #888;
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .terms a {
+      color: #805ad5;
+      text-decoration: none;
+    }
+
+    .terms a:hover {
+      text-decoration: underline;
+    }
+
+    .login-link {
+      text-align: center;
+      font-size: 14px;
+      margin-top: 30px;
+    }
+
+    .login-link a {
+      color: #805ad5;
+      text-decoration: none;
+    }
+
+    .login-link a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
-    <div class="register-box">
-        <form method="POST">
-            <h2>🔧 Register (CSE Study Room)</h2>
-
-            <input name="username" type="email" placeholder="👨‍💻 Your CSE Email" required>
-            <input name="password" type="password" placeholder="🔐 Create Password" required>
-
-            <label for="role">🎓 Select Role:</label>
-            <select name="role" id="role" required>
-                <option value="student">Student</option>
-                <option value="admin">Admin</option>
-            </select>
-
-            <button type="submit">🚀 Create Account</button>
-
-            <?php if (isset($error)): ?>
-                <p class="error"><?= htmlspecialchars($error) ?></p>
-            <?php endif; ?>
-
-            <div class="login-link">
-                Already have an account? <a href="login.php">Login here</a>
-            </div>
-
-            <div class="tech-tag">Crafted for curious coders 🧠</div>
-        </form>
+  <?php include '../includes/nav.php'; ?>
+  <div class="container">
+    <div class="illustration">
+      <img src="../assets/images/signup-illustration.png" alt="Register Illustration" />
     </div>
+    <div class="form-section">
+      <h2>Sign up with email</h2>
+      <form method="POST">
+        <label for="username">Full name</label>
+        <input name="username" type="email" placeholder="Enter your email" required />
+
+        <label for="password">Password</label>
+        <input name="password" type="password" placeholder="Enter your password" required />
+
+        <label for="role">Select role</label>
+        <select name="role" id="role" required>
+          <option value="student">Student</option>
+          <option value="admin">Admin</option>
+        </select>
+
+        <div class="checkbox">
+          <input type="checkbox" checked>
+          <label for="offers">Send me special offers, personalized recommendations, and learning tips.</label>
+        </div>
+
+        <button type="submit">📩 Register</button>
+
+        <?php if (isset($error)): ?>
+          <p class="error"><?= htmlspecialchars($error) ?></p>
+        <?php endif; ?>
+
+        <div class="divider">Other sign up options</div>
+        <div class="social-buttons">
+          <a href="#"><img src="../assets/images/google.png" alt="Google"></a>
+          <a href="#"><img src="../assets/images/facebook.png" alt="Facebook"></a>
+        
+        </div>
+
+        <div class="terms">
+          By signing up, you agree to our <a href="#">Terms of Use</a> and <a href="#">Privacy Policy</a>.
+        </div>
+
+        <div class="login-link">
+          Already have an account? <a href="login.php">Login here</a>
+        </div>
+      </form>
+    </div>
+  </div>
+  <?php include '../includes/footer.php'; ?>
 </body>
 </html>
