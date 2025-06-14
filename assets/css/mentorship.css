@@ -1,0 +1,165 @@
+/* ===== Reset & Base ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f6f9;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* ===== NAVBAR ===== */
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #1e2a38;
+  padding: 0 30px;
+  height: 60px;
+}
+.nav__brand {
+  color: #fff;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+.nav__links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+.nav__links a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color .2s;
+}
+.nav__links a:hover { color: #1abc9c; }
+.nav__logout {
+  background: #e74c3c;
+  padding: 6px 12px;
+  border-radius: 4px;
+  transition: background .2s;
+}
+.nav__logout:hover { background: #c0392b; }
+
+/* ===== HERO ===== */
+.hero {
+  background: #1abc9c;
+  color: #fff;
+  padding: 80px 20px;
+  text-align: center;
+}
+.hero-title {
+  font-size: 2.8rem;
+  margin-bottom: 15px;
+}
+.hero-subtitle {
+  font-size: 1.15rem;
+  max-width: 700px;
+  margin: 0 auto;
+  opacity: .9;
+}
+
+/* ===== CONTAINER ===== */
+.container {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+/* ===== MENTORS GRID ===== */
+.mentors-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+  gap: 25px;
+  margin-bottom: 30px;
+}
+.mentor-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 6px 18px rgba(0,0,0,.08);
+  transition: transform .3s, box-shadow .3s;
+  text-align: center;
+}
+.mentor-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(0,0,0,.12);
+}
+.mentor-photo {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto 15px;
+}
+.mentor-card h2 {
+  color: #1e90ff;
+  margin-bottom: 8px;
+}
+.mentor-expertise {
+  color: #555;
+  margin-bottom: 10px;
+}
+.course-name {
+  font-weight: bold;
+  color: #1e2a38;
+  margin-bottom: 12px;
+}
+
+/* ===== BUTTONS ===== */
+.btn {
+  display: inline-block;
+  background: #1abc9c;
+  color: #fff;
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: background .2s;
+}
+.btn:hover { background: #16a085; }
+
+/* ===== PROFILE VIEW ===== */
+.mentor-card.profile { max-width: 600px; margin: auto; }
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 6px;
+  resize: vertical;
+  font-family: inherit;
+  font-size: 1em;
+  margin-bottom: 15px;
+}
+.message {
+  margin-top: 15px;
+  color: #1e90ff;
+  font-weight: bold;
+}
+
+/* ===== NO RESULTS ===== */
+.no-results {
+  text-align: center;
+  color: #666;
+  font-size: 1.1em;
+}
+
+/* ===== BACK BUTTON ===== */
+.section .btn {
+  margin-top: 30px;
+  background: #1e2a38;
+}
+.section .btn:hover {
+  background: #16202a;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .hero-title { font-size: 2.2rem; }
+  .hero-subtitle { font-size: 1rem; }
+}
