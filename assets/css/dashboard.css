@@ -8,7 +8,7 @@ body {
   font-family: 'Hind Siliguri', sans-serif;
   background: #f4f9fc;
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
   align-items: center;
   min-height: 100vh;
 }
@@ -21,29 +21,24 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  position: fixed; 
+  position: fixed;
   top: 0;
   left: 0;
   z-index: 1000;
 }
-
-/* Navigation Brand */
 .nav__brand {
   font-size: 1.5rem;
   color: #fff;
   font-weight: bold;
-  margin-right: auto; /* Pushes links to the right */
+  margin-right: auto;
   padding-left: 24px;
 }
-
-/* Navigation Links */
 .nav__links {
   list-style: none;
   display: flex;
   gap: 20px;
   margin-right: 24px;
 }
-
 .nav__links li a {
   text-decoration: none;
   color: #fff;
@@ -51,12 +46,9 @@ body {
   font-weight: bold;
   transition: color 0.3s ease;
 }
-
 .nav__links li a:hover {
   color: #00bfa5;
 }
-
-/* Logout Button */
 .nav__logout {
   background: #e74c3c;
   padding: 8px 16px;
@@ -64,26 +56,77 @@ body {
   color: #fff;
   transition: background 0.3s ease;
 }
-
 .nav__logout:hover {
   background: #c0392b;
 }
 
-/* Container */
+/* Welcome Section */
+.welcome-banner {
+  width: 100%;
+  padding: 120px 40px 20px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.avatar-circle {
+  width: 64px;
+  height: 64px;
+  background: #111;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+}
+.welcome-text h1 {
+  font-size: 1.8rem;
+  color: #003049;
+}
+.welcome-text .sub {
+  color: #555;
+  font-size: 14px;
+}
+.welcome-text .highlight {
+  color: #805ad5;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Banner Message */
+.banner-message {
+  width: 90%;
+  max-width: 1000px;
+  background: #fdbb58;
+  padding: 30px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto 40px;
+}
+.banner-message .text-box {
+  max-width: 60%;
+}
+.banner-message h2 {
+  font-size: 24px;
+  color: #2c2c2c;
+  margin-bottom: 10px;
+}
+.banner-message p {
+  font-size: 16px;
+  color: #333;
+}
+.banner-message img {
+  height: 100px;
+}
+
+/* Dashboard Container */
 .dashboard-container {
   width: 90%;
   max-width: 1200px;
-  padding: 80px 20px 20px;
-}
-.dashboard-container h2 {
-  text-align: center;
-  color: #003049;
-  margin-bottom: 8px;
-}
-.intro {
-  text-align: center;
-  color: #555;
-  margin-bottom: 24px;
+  padding: 20px 20px 60px;
 }
 
 /* Grid Layout */
@@ -96,52 +139,30 @@ body {
 /* Card */
 .card {
   position: relative;
-  height: 200px;                 
+  height: 200px;
   border-radius: 12px;
-  background-size: cover;       
+  background-size: cover;
   background-position: center;
-  box-shadow: 0 4px 12px rgba(152, 26, 26, 0.918);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s, box-shadow 0.2s;
+  animation: floatBg 6s ease-in-out infinite;
 }
 .card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
-
-/* Float Animation on Background */
 @keyframes floatBg {
-  0%,100% { background-position: center top; }
-  50%     { background-position: center bottom; }
+  0%, 100% { background-position: center top; }
+  50% { background-position: center bottom; }
 }
-.card {
-  animation: floatBg 6s ease-in-out infinite;
-}
-
-/* Overlay Content */
 .card-content {
   position: absolute;
   bottom: 0;
   width: 100%;
-  background: rgba(255,255,255,0.9);
+  background: rgba(255, 255, 255, 0.95);
   padding: 12px;
   text-align: center;
 }
-
-/* Text Below Picture */
-.text-below-picture {
-    font-size: 16px;
-    color: #ffffff;
-    background: rgba(0, 191, 165, 0.8); /* Semi-transparent overlay */
-    padding: 10px;
-    border-radius: 5px;
-    text-align: center;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-}
-
-/* Section Button */
 .card-btn {
   display: inline-block;
   margin-bottom: 8px;
@@ -162,17 +183,88 @@ body {
 .card-btn.logout:hover {
   background: #c0392b;
 }
-
-/* Description */
 .desc {
   font-size: 0.9rem;
   color: #333;
   margin: 0;
 }
 
+.footer {
+  background: #0b0f1a;
+  color: white;
+  padding: 60px 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-top: 1px solid #1c1f26;
+  width: 100%;
+}
+
+.footer-cols {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  width: 100%;
+  gap: 40px;
+  margin-bottom: 30px;
+}
+
+.footer-cols > div {
+  flex: 1 1 220px;
+  min-width: 200px;
+}
+
+.footer h3,
+.footer h4 {
+  font-size: 16px;
+  margin-bottom: 12px;
+}
+
+.footer p,
+.footer li {
+  font-size: 14px;
+  color: #ccc;
+  list-style: none;
+  margin-bottom: 6px;
+}
+
+/* Center the copyright */
+.footer-bottom {
+  text-align: center;
+  color: #ccc;
+  font-size: 14px;
+  width: 100%;
+  border-top: 1px solid #1c1f26;
+  padding-top: 16px;
+}
+
+
 /* Responsive */
+@media (max-width: 768px) {
+  .welcome-banner {
+    flex-direction: column;
+    text-align: center;
+    padding-top: 100px;
+  }
+  .banner-message {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: center;
+    gap: 20px;
+  }
+  .banner-message .text-box {
+    max-width: 100%;
+  }
+}
 @media (max-width: 600px) {
-  .card { height: 160px; }
-  .card-btn { font-size: 0.9rem; }
-  .desc { font-size: 0.85rem; }
+  .card {
+    height: 160px;
+  }
+  .card-btn {
+    font-size: 0.9rem;
+  }
+  .desc {
+    font-size: 0.85rem;
+  }
 }
