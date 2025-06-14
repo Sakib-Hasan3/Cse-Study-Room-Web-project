@@ -1,0 +1,190 @@
+/* assets/css/projects.css */
+
+/* ===== Reset & Base ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f6f9;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* ===== NAVBAR ===== */
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #1e2a38;
+  padding: 0 30px;
+  height: 60px;
+}
+.nav__brand {
+  color: #fff;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+.nav__links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+.nav__links a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 6px 10px;
+  border-radius: 4px;
+  transition: background .2s, color .2s;
+}
+.nav__links a:hover {
+  background: #fff;
+  color: #1e2a38;
+}
+.nav__logout {
+  background: #e74c3c;
+}
+.nav__logout:hover {
+  background: #fff;
+  color: #e74c3c;
+}
+
+/* ===== HERO BANNER ===== */
+.hero {
+  background: #1abc9c;
+  color: #fff;
+  padding: 80px 20px;
+  text-align: center;
+}
+.hero-title {
+  font-size: 2.8rem;
+  margin-bottom: 15px;
+}
+.hero-subtitle {
+  font-size: 1.15rem;
+  max-width: 700px;
+  margin: 0 auto;
+  opacity: .9;
+}
+
+/* ===== PAGE CONTAINER ===== */
+.container {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+/* ===== SEARCH FORM ===== */
+.search-form {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+.search-input {
+  width: 60%;
+  padding: 10px 14px;
+  border: 2px solid #ccc;
+  border-radius: 6px 0 0 6px;
+  font-size: 1em;
+  outline: none;
+  transition: border-color .2s;
+}
+.search-input:focus {
+  border-color: #1abc9c;
+}
+.search-btn {
+  background: #1abc9c;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 0 6px 6px 0;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background .2s;
+}
+.search-btn:hover {
+  background: #16a085;
+}
+
+/* ===== PROJECTS GRID ===== */
+.projects-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+  gap: 25px;
+}
+.project-item {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 6px 18px rgba(0,0,0,.08);
+  transition: transform .3s, box-shadow .3s;
+}
+.project-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(0,0,0,.12);
+}
+.project-item h3 {
+  color: #1e90ff;
+  margin-bottom: 10px;
+}
+.project-item p {
+  margin-bottom: 12px;
+  color: #444;
+}
+.project-item a.btn {
+  display: inline-block;
+  background: #1abc9c;
+  color: #fff;
+  text-decoration: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: background .2s;
+}
+.project-item a.btn:hover {
+  background: #16a085;
+}
+.project-item small {
+  display: block;
+  margin-top: 12px;
+  color: #888;
+}
+
+/* ===== NO RESULTS MESSAGE ===== */
+.no-results {
+  text-align: center;
+  color: #666;
+  font-size: 1.1em;
+  margin: 40px 0;
+}
+
+/* ===== BACK BUTTON ===== */
+.section .btn {
+  display: inline-block;
+  margin-top: 30px;
+  background: #1e2a38;
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background .2s;
+}
+.section .btn:hover {
+  background: #16202a;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.2rem;
+  }
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+  .search-input {
+    width: 70%;
+  }
+}
