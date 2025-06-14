@@ -1,0 +1,283 @@
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f6f9;
+  color: #333;
+}
+
+/* Navigation bar */
+.nav {
+  background-color: #1e2a38;
+  padding: 0 30px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav__brand {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.nav__links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav__links a {
+  color: #fff;
+  text-decoration: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  transition: background 0.3s, color 0.3s;
+}
+
+.nav__links a:hover,
+.nav__links .active {
+  background-color: #fff;
+  color: #1e2a38;
+}
+
+.nav__logout {
+  background: #e74c3c;
+}
+
+.nav__logout:hover {
+  background: #fff;
+  color: #e74c3c;
+}
+
+/* Hero banner */
+.hero {
+  background: #1abc9c;
+  color: white;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.hero-title {
+  font-size: 2.8rem;
+  margin-bottom: 10px;
+}
+
+.hero-subtitle {
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 0 auto;
+  opacity: 0.9;
+}
+
+/* Container */
+.container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+/* Ask Your Own Question box */
+.ask-own {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 30px;
+  text-align: center;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.05);
+}
+.ask-own h2 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+.ask-own p {
+  color: #555;
+  margin-bottom: 14px;
+}
+
+/* Question Form */
+.question-form-card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  margin-bottom: 30px;
+}
+
+.question-form-card h2 {
+  margin-bottom: 15px;
+}
+
+.question-form-card textarea {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 6px;
+  resize: vertical;
+  font-family: inherit;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.question-form-card textarea:focus {
+  border-color: #1abc9c;
+}
+
+.question-form-card .btn {
+  background: #1abc9c;
+  color: #fff;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-top: 12px;
+  transition: background 0.3s;
+}
+
+.question-form-card .btn:hover {
+  background: #159b85;
+}
+
+.message {
+  margin-top: 10px;
+  font-weight: bold;
+  color: green;
+}
+
+/* Questions List */
+.question-item {
+  background: #fff;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+  margin-bottom: 20px;
+}
+
+.question-item .meta {
+  font-size: 0.95rem;
+  font-weight: bold;
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.question-item .text {
+  font-size: 1.1rem;
+  color: #333;
+}
+
+/* Answer Button */
+.btn-answer {
+  display: inline-block;
+  margin-top: 12px;
+  background-color: #3498db;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: background 0.3s;
+}
+.btn-answer:hover {
+  background-color: #2980b9;
+}
+
+/* Answers Section */
+.answers-section {
+  background: #fff;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.05);
+  margin-bottom: 40px;
+}
+
+.answers-section h3 {
+  margin-bottom: 14px;
+  font-size: 1.3rem;
+  color: #2c3e50;
+}
+
+.answer-item {
+  background: #f9f9f9;
+  border-left: 4px solid #1abc9c;
+  padding: 16px;
+  margin-bottom: 15px;
+  border-radius: 6px;
+}
+
+.answer-item p {
+  font-size: 1rem;
+  margin-bottom: 6px;
+}
+
+.answer-item small {
+  color: #777;
+}
+
+/* Answer form inside answers-section */
+.answers-section form {
+  margin-top: 20px;
+}
+
+.answers-section textarea {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  resize: vertical;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: border 0.3s;
+}
+
+.answers-section textarea:focus {
+  border-color: #1abc9c;
+}
+
+.answers-section button.btn {
+  background: #1abc9c;
+  color: white;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  margin-top: 12px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.answers-section button.btn:hover {
+  background: #159b85;
+}
+
+/* Section button */
+.section .btn {
+  display: inline-block;
+  background: #1e2a38;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.section .btn:hover {
+  background: #16202a;
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+  .hero-title {
+    font-size: 2.2rem;
+  }
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+}
