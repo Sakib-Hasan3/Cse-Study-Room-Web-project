@@ -145,6 +145,9 @@ Department of Computer Science & Engineering
 [Patuakhali Science And Technology University]
 
 ---
+🌐 Live Website: http://csezone.infinityfreeapp.com
+
+
 
 > ⚠️ Note: For production deployment, implement input sanitization, password hashing, CSRF protection, and secure session handling.
 
