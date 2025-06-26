@@ -1,4 +1,3 @@
-
 <?php
 require_once '../db.php';
 session_start();
@@ -41,6 +40,39 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <title>Login - CSE Study Room</title>
     <link rel="stylesheet" href="../assets/css/login.css">
     <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri&display=swap" rel="stylesheet">
+    <style>
+        /* Password Field with Eye Icon */
+        .password-container {
+            position: relative;
+            width: 100%;
+        }
+
+        .password-container input[type="password"],
+        .password-container input[type="text"] {
+            width: 100%;
+            padding: 12px;
+            padding-right: 40px; /* Space for the eye icon */
+            margin: 12px 0;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 16px;
+        }
+
+        .password-container .toggle-password {
+            position: absolute;
+            top: 50%;
+            right: 12px;
+            transform: translateY(-50%);
+            cursor: pointer;
+            font-size: 18px;
+            color: #555;
+            user-select: none;
+        }
+
+        .password-container .toggle-password:hover {
+            color: #000;
+        }
+    </style>
 </head>
 <body>
 <div class="login-wrapper">
@@ -62,7 +94,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             <form method="POST" novalidate>
                 <input name="username" type="email" placeholder="Email" required>
-                <input name="password" type="password" placeholder="Password" required>
+
+                <div class="password-container">
+                    <input id="password" name="password" type="password" placeholder="Enter your password" required>
+                    <span class="toggle-password" onclick="togglePassword()">👁️</span>
+                </div>
 
                 <label>Select Role:</label>
                 <select name="role" required>
@@ -73,11 +109,29 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <button type="submit">Login</button>
 
                 <?php if (!empty($error)): ?>
-                    <p style="color: red;"><?= htmlspecialchars($error) ?></p>
+                    <p class="error"><?= htmlspecialchars($error) ?></p>
                 <?php endif; ?>
+
+                <p class="register-text">Don't have an account? <a href="register.php">Sign up here</a></p>
             </form>
         </div>
     </div>
 </div>
+
+<script>
+function togglePassword() {
+    var passwordInput = document.getElementById("password");
+    var toggleIcon = document.querySelector(".toggle-password");
+
+    if (passwordInput.type === "password") {
+        passwordInput.type = "text";
+        toggleIcon.textContent = "🙈";
+    } else {
+        passwordInput.type = "password";
+        toggleIcon.textContent = "👁️";
+    }
+}
+</script>
+
 </body>
 </html>
